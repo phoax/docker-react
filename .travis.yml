@@ -1,5 +1,5 @@
-language: generic
 sudo: required
+language: generic
 
 services:
   - docker
@@ -15,7 +15,7 @@ deploy:
   region: "eu-west-3"
   app: "Docker-react"
   env: "DockerReact-env"
-  bucket_name: "arn:aws:s3:::elasticbeanstalk-eu-west-3-955921749276"
+  bucket_name: "elasticbeanstalk-eu-west-3-955921749276"
   bucket_path: "Docker-react"
   on:
     branch: master
