@@ -9,3 +9,16 @@ before_install:
 
 script:
   - docker run -e CI=true phoax/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "Docker-react"
+  env: "DockerReact-env"
+  bucket_name: "arn:aws:s3:::elasticbeanstalk-eu-west-3-955921749276"
+  bucket_path: "Docker-react"
+  on:
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
